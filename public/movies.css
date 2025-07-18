@@ -1,0 +1,29 @@
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    color: black;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+tbody > tr:nth-of-type(even) {
+    background-color: rgb(225, 227, 233);
+}
+
+th {
+    padding: 2px 20px;
+}
+
+td {
+    padding: 4px 20px;
+}

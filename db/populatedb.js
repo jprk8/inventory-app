@@ -21,8 +21,8 @@ INSERT INTO genres (genre)
 VALUES
     ('Action'),
     ('Comedy'),
-    ('Sci-fi'),
-    ('Drama');
+    ('Drama'),
+    ('Sci-fi');
 
 INSERT INTO movies (title, year, genre_id, director)
 VALUES

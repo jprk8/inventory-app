@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="movies.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <img src="logo.png" alt="movie database logo" width="200px">
+    <div class="title"><%= title %></div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Year</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach((movie) => { %>
+                <tr>
+                    <td><%= movie.title %></td>
+                    <td><%= movie.year %></td>
+                    <td><%= movie.genre %></td>
+                    <td><%= movie.director %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/"><button class="menu-btn">Home</button></a>
+</body>
+</html>

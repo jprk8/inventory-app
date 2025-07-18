@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/details.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <img src="/logo.png" alt="movie database logo" width="200px" />
+    <div class="title"><%= title %></div>
+    <div class="movie-title"><%= movie.title %></div>
+    <div class="wrapper">
+        <p>Release Year: <%= movie.year %></p>
+        <p>Genre: <%= movie.genre %></p>
+        <p>Director: <%= movie.director %></p>
+        <p>ID: <%= movie.id %></p>
+    </div>
+    <a href="javascript:window.history.back()"><button class="menu-btn">Back</button></a>
+</body>
+</html>

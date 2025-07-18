@@ -47,6 +47,11 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
 .menu-btn {
     border: 2px solid white;
     border-radius: 30px;

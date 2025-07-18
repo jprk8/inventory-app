@@ -1,0 +1,11 @@
+.movie-title {
+    font-size: 54px;
+    font-weight: 1000;
+    max-width: 320px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.wrapper {
+    font-size: 20px;
+}

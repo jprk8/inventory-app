@@ -5,17 +5,27 @@
     <link rel="stylesheet" href="/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory App</title>
+    <title><%= title %></title>
 </head>
 <body>
-    <img src="/logo.png" alt="movie database logo" width="200px">
-    <a href="/movies"><button class="menu-btn">All Movies</button></a>
-    <div class="category">View by Category</div>
-    <div class="category-container">
-        <button class="menu-btn">Action</button>
-        <button class="menu-btn">Comedy</button>
-        <button class="menu-btn">Drama</button>
-        <button class="menu-btn">Sci-fi</button>
+    <div class="page-wrapper">
+        <img src="/logo.png" alt="movie database logo" width="200px">
+        <div class="search-bar">
+            <img src="/search.svg" alt="" width="30px">
+            <form action="post">
+                <input type="search" id="search" name="search" placeholder="Search for movies" />
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+        <a href="/add-movie"><button class="menu-btn add-btn">Add Movie</button></a>
+        <div class="category">View by Category</div>
+        <div class="category-container">
+            <a href="/movies"><button class="menu-btn">All</button></a>
+            <button class="menu-btn">Action</button>
+            <button class="menu-btn">Comedy</button>
+            <button class="menu-btn">Drama</button>
+            <button class="menu-btn">Sci-fi</button>
+        </div>
     </div>
 </body>
 </html>

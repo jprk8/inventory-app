@@ -8,15 +8,17 @@
     <title><%= title %></title>
 </head>
 <body>
-    <img src="/logo.png" alt="movie database logo" width="200px" />
-    <div class="title"><%= title %></div>
-    <div class="movie-title"><%= movie.title %></div>
-    <div class="wrapper">
-        <p>Release Year: <%= movie.year %></p>
-        <p>Genre: <%= movie.genre %></p>
-        <p>Director: <%= movie.director %></p>
-        <p>ID: <%= movie.id %></p>
+    <div class="page-wrapper">
+        <img src="/logo.png" alt="movie database logo" width="200px" />
+        <div class="title"><%= title %></div>
+        <div class="movie-title"><%= movie.title %></div>
+        <div class="wrapper">
+            <p><strong>Release Year: </strong><%= movie.year %></p>
+            <p><strong>Genre: </strong><%= movie.genre %></p>
+            <p><strong>Director: </strong><%= movie.director %></p>
+            <p><strong>ID: </strong><%= movie.id %></p>
+        </div>
+        <a href="javascript:window.history.back()"><button class="menu-btn">Back</button></a>
     </div>
-    <a href="javascript:window.history.back()"><button class="menu-btn">Back</button></a>
 </body>
 </html>

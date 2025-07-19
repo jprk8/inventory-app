@@ -12,14 +12,17 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: Quicksand;
+  background-color: #222;
+  color: white;
+}
+
+.page-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
-  background-color: #222;
-  color: white;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
@@ -53,13 +56,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-btn {
-    border: 2px solid white;
+    border: none;
     border-radius: 30px;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 .menu-btn:hover {
-    background-color: black;
-    color: white;
+    transform: scale(1.2);
 }

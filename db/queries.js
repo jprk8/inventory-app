@@ -32,7 +32,23 @@ async function getMovieDetails(id) {
     return rows[0];
 }
 
+async function getGenres() {
+    const SQL = `SELECT * FROM genres;`;
+    const { rows } = await pool.query(SQL);
+    return rows;
+}
+
+async function addMovie(movie) {
+    const SQL = `
+    INSERT INTO movies (title, year, genre_id, director)
+    VALUES ($1, $2, $3, $4);
+    `;
+    await pool.query(SQL, [movie.title, movie.year, movie.genre, movie.director]);
+}
+
 module.exports = {
     getAllMovies,
-    getMovieDetails
+    getMovieDetails,
+    getGenres,
+    addMovie
 };

@@ -27,9 +27,9 @@ VALUES
 INSERT INTO movies (title, year, genre_id, director)
 VALUES
     ('Interstellar', 2014, (SELECT id FROM genres WHERE genre = 'Sci-fi'), 'Christopher Nolan'),
-    ('Kingsman: The Secret Service', 2014, (SELECT id FROM genres WHERE genre = 'Action'), 'Matthew Vaughn'),
+    ('John Wick', 2014, (SELECT id FROM genres WHERE genre = 'Action'), 'Chad Stahelski'),
     ('Superbad', 2007, (SELECT id FROM genres WHERE genre = 'Comedy'), 'Greg Mottola'),
-    ('Oppenheimer', 2023, (SELECT id FROM genres WHERE genre = 'Drama'), 'Christopher Nolan');
+    ('About Time', 2013, (SELECT id FROM genres WHERE genre = 'Drama'), 'Richard Curtis');
 `;
 
 async function main() {

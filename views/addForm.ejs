@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/common.css">
-    <link rel="stylesheet" href="/addForm.css">
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="/styles/addForm.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
 </head>
 <body>
     <div class="page-wrapper">
-        <img src="/logo.png" alt="movie database logo" width="200px" />
+        <img src="/assets/logo.png" alt="movie database logo" width="200px" />
         <div class="title"><%= title %></div>
         <form action="/add-movie" method="post">
             <div class="form-row">
@@ -26,14 +26,14 @@
                     name="genre"
                     id="genre"
                     size="<%= genres.length %>"
-                    style="min-height: calc(1.5em * <%= genres.length %>)"
+                    <%# workaround for select height collapsing bug in chrome inside flexbox %>
+                    <%- `style="min-height: calc(1.5em * ${genres.length})"` %>
                     required
                 >
                     <% genres.forEach((genre) => { %>
                         <option value="<%= genre.id %>"><%= genre.genre %></option>
                     <% }) %>
                 </select>
-                <!-- <input type="text" name="genre" id="genre" placeholder="e.g. Action, Comedy, etc..." required /> -->
             </div>
             <div class="form-row">
                 <label for="director">Director</label>

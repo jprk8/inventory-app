@@ -10,7 +10,14 @@ async function getDetails(req, res) {
     res.render('details', { title: 'Movie Details', movie: movie });
 }
 
+async function deleteMoviePost(req, res) {
+    await db.deleteMovie(req.params.id);
+    const redirectTo = req.get('Referer') || '/';
+    res.redirect(redirectTo);
+}
+
 module.exports = {
     getMovies,
-    getDetails
+    getDetails,
+    deleteMoviePost
 };

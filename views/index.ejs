@@ -12,7 +12,7 @@
         <img src="/assets/logo.png" alt="movie database logo" width="200px">
         <div class="search-bar">
             <img src="/assets/search.svg" alt="" width="30px">
-            <form action="post">
+            <form action="/">
                 <input type="search" id="search" name="search" placeholder="Search for movies" />
                 <button type="submit" class="search-btn">Search</button>
             </form>
@@ -21,10 +21,11 @@
         <div class="category">View by Category</div>
         <div class="category-container">
             <a href="/movies"><button class="menu-btn">All</button></a>
-            <button class="menu-btn">Action</button>
-            <button class="menu-btn">Comedy</button>
-            <button class="menu-btn">Drama</button>
-            <button class="menu-btn">Sci-fi</button>
+            <% genres.forEach((genre) => { %>
+                <a href="/movies/genre/<%= genre.genre %>">
+                    <button class="menu-btn"><%= genre.genre %></button>
+                </a>
+            <% }) %>
         </div>
     </div>
 </body>

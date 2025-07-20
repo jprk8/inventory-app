@@ -44,7 +44,7 @@ async function getMovieDetails(id) {
 
 async function getGenres() {
     try {
-        const SQL = `SELECT * FROM genres;`;
+        const SQL = `SELECT * FROM genres ORDER BY genre;`;
         const { rows } = await pool.query(SQL);
         return rows;
     } catch (err) {
@@ -76,10 +76,33 @@ async function deleteMovie(id) {
     }
 }
 
+async function getGenreMovies(genre) {
+    try {
+        const SQL = `
+        SELECT
+            movies.id,
+            movies.title,
+            movies.year,
+            genres.genre,
+            movies.director
+        FROM movies
+        LEFT JOIN genres ON movies.genre_id = genres.id
+        WHERE genres.genre = $1
+        ORDER BY movies.title
+        `;
+        const { rows } = await pool.query(SQL, [genre]);
+        return rows;
+    } catch (err) {
+        console.error('Error loading movies from genre:', err);
+        return [];
+    }
+}
+
 module.exports = {
     getAllMovies,
     getMovieDetails,
     getGenres,
     addMovie,
-    deleteMovie
+    deleteMovie,
+    getGenreMovies
 };

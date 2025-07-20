@@ -1,7 +1,8 @@
 const db = require('../db/queries');
 
-function indexGet(req, res) {
-    res.render('index', { title: 'Movie Database'});
+async function indexGet(req, res) {
+    const genres = await db.getGenres();
+    res.render('index', { title: 'Movie Database', genres: genres});
 }
 
 async function addMovieGet(req, res) {

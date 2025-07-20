@@ -2,7 +2,8 @@ const db = require('../db/queries');
 
 async function getMovies(req, res) {
     const movies = await db.getAllMovies();
-    res.render('movies', { title: 'All Movies', movies: movies });
+    const genres = await db.getGenres();
+    res.render('movies', { title: 'All Movies', movies: movies , genres: genres });
 }
 
 async function getDetails(req, res) {
@@ -16,8 +17,15 @@ async function deleteMoviePost(req, res) {
     res.redirect(redirectTo);
 }
 
+async function getGenreMovies(req, res) {
+    const movies = await db.getGenreMovies(req.params.genre);
+    const genres = await db.getGenres();
+    res.render('movies', { title: req.params.genre, movies: movies , genres: genres });
+}
+
 module.exports = {
     getMovies,
     getDetails,
-    deleteMoviePost
+    deleteMoviePost,
+    getGenreMovies,
 };

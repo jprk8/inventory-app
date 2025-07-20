@@ -4,6 +4,10 @@ table {
     border-radius: 6px;
     overflow: hidden;
     color: black;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    table-layout: fixed;
 }
 
 thead {
@@ -11,16 +15,32 @@ thead {
     color: white;
 }
 
-tbody > tr:nth-of-type(even) {
+th:nth-child(1),
+td:nth-child(1) {
+    width: 320px;
+    text-align: left;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 70px;
+    text-align: center;
+}
+
+tbody tr:nth-of-type(even) {
     background-color: rgb(225, 227, 233);
 }
 
-th {
-    padding: 2px 20px;
+th, td {
+    padding: 3px 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-td {
-    padding: 4px 20px;
+tbody tr:hover {
+    background-color: rgb(255, 251, 222);
+    cursor: pointer;
 }
 
 .delete-btn {
@@ -28,9 +48,18 @@ td {
     border: none;
     padding: 0;
     cursor: pointer;
+    display: grid;
+    place-items: center;
 }
 
 .option-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+}
+
+.category-container {
+    display: flex;
+    gap: 20px;
 }

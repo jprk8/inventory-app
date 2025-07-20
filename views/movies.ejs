@@ -11,6 +11,14 @@
     <div class="page-wrapper">
         <img src="/assets/logo.png" alt="movie database logo" width="200px" />
         <div class="title"><%= title %></div>
+        <div class="category-container">
+            <a href="/movies"><button class="menu-btn">All</button></a>
+            <% genres.forEach((genre) => { %>
+                <a href="/movies/genre/<%= genre.genre %>">
+                    <button class="menu-btn"><%= genre.genre %></button>
+                </a>
+            <% }) %>
+        </div>
         <% if (movies.length === 0) { %>
             <p>No movies found in database.</p>
         <% } else { %>
@@ -34,10 +42,10 @@
                             <td>
                                 <div class="option-container">
                                     <a href="/movies/<%= movie.id %>">
-                                        <img src="/assets/view.svg" alt="view icon">
+                                        <img src="/assets/view.svg" alt="view icon" width="24px">
                                     </a>
                                     <a href="">
-                                        <img src="/assets/edit.svg" alt="edit icon">
+                                        <img src="/assets/edit.svg" alt="edit icon" width="24px">
                                     </a>
                                     <form
                                         action="/movies/<%= movie.id %>/delete"
@@ -45,7 +53,7 @@
                                         onsubmit="return confirm('Delete &#34;<%= movie.title %>&#34; ?')"
                                     >
                                         <button type="submit" class="delete-btn">
-                                            <img src="/assets/delete.svg" alt="delete icon">
+                                            <img src="/assets/delete.svg" alt="delete icon" width="24px">
                                         </button>
                                     </form>
                                 </div>

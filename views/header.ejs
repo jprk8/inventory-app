@@ -1,0 +1,14 @@
+<div class="logo-wrapper">
+    <img src="/assets/logo.png" alt="movie database logo" width="200px">
+    <p class="logo-text">Powered by GIPHY™</p>
+</div>
+<% if (home) { %>
+    <img src="/assets/countdown.gif" alt="count down gif" width="250px">
+<% } %>
+<div class="search-bar">
+    <img src="/assets/search.svg" alt="" width="30px">
+    <form action="/search-result" method="GET">
+        <input type="search" id="search" name="search" placeholder="Search for movies" />
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+</div>

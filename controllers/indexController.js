@@ -25,10 +25,17 @@ async function addGenrePost(req, res) {
     res.redirect('/');
 }
 
+async function searchMovieGet(req, res) {
+    const word = req.query.search;
+    const movies = await db.getSearchResult(word);
+    res.render('searchResult', { title: `Search result for: ${word}`, movies: movies });
+}
+
 module.exports = {
     indexGet,
     addMovieGet,
     addMoviePost,
     addGenreGet,
     addGenrePost,
+    searchMovieGet,
 };

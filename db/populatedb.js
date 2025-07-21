@@ -32,7 +32,6 @@ VALUES
     ('About Time', 2013, (SELECT id FROM genres WHERE genre = 'Drama'), 'Richard Curtis'),
     ('2001: A Space Odyssey', 1968, (SELECT id FROM genres WHERE genre = 'Sci-fi'), 'Stanley Kubrick'),
     ('The Hangover', 2009, (SELECT id FROM genres WHERE genre = 'Comedy'), 'Todd Phillips'),
-    ('Gladiator', 2000, (SELECT id FROM genres WHERE genre = 'Action'), 'Ridley Scott');
 `;
 
 async function main() {

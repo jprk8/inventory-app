@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 .title {
     font-size: 28px;
     font-weight: 600;
+    border-bottom: 1px solid white;
 }
 
 .menu-btn {
@@ -75,4 +76,39 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu-btn:hover {
     transform: scale(1.12);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+input[type="search"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    background-color: rgb(213, 213, 213);
+    color: black;
+}
+
+.search-btn {
+    background-color: rgb(255, 225, 58);
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
 }

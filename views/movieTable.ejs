@@ -1,0 +1,44 @@
+<% if (movies.length === 0) { %>
+            <p>No movies found in database.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Director</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% movies.forEach((movie) => { %>
+                        <tr>
+                            <td><strong><%= movie.title %></strong></td>
+                            <td><%= movie.year %></td>
+                            <td><%= movie.genre %></td>
+                            <td><%= movie.director %></td>
+                            <td>
+                                <div class="option-container">
+                                    <a href="/movies/<%= movie.id %>">
+                                        <img src="/assets/view.svg" alt="view icon" width="24px">
+                                    </a>
+                                    <a href="">
+                                        <img src="/assets/edit.svg" alt="edit icon" width="24px">
+                                    </a>
+                                    <form
+                                        action="/movies/<%= movie.id %>/delete"
+                                        method="POST"
+                                        onsubmit="return confirm('Delete &#34;<%= movie.title %>&#34; ?')"
+                                    >
+                                        <button type="submit" class="delete-btn">
+                                            <img src="/assets/delete.svg" alt="delete icon" width="24px">
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+<% } %>

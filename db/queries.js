@@ -104,10 +104,31 @@ async function addGenre(genre) {
         INSERT INTO genres (genre)
         VALUES ($1);
         `;
-        await pool.query(SQL, [genre])
+        await pool.query(SQL, [genre]);
     } catch (err) {
         console.error('Error creating genre:', err);
         throw err;
+    }
+}
+
+async function getSearchResult(word) {
+    try {
+        const SQL = `
+        SELECT
+            movies.id,
+            movies.title,
+            movies.year,
+            genres.genre,
+            movies.director
+        FROM movies
+        LEFT JOIN genres ON movies.genre_id = genres.id
+        WHERE movies.title ILIKE $1;
+        `;
+        const { rows } = await pool.query(SQL, [`%${word}%`]);
+        return rows;
+    } catch (err) {
+        console.error('Error searching database:', err);
+        return [];
     }
 }
 
@@ -119,4 +140,5 @@ module.exports = {
     deleteMovie,
     getGenreMovies,
     addGenre,
+    getSearchResult,
 };

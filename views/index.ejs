@@ -9,18 +9,7 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <div class="logo-wrapper">
-            <img src="/assets/logo.png" alt="movie database logo" width="200px">
-            <p class="logo-text">Powered by GIPHY™</p>
-        </div>
-        <img src="/assets/countdown.gif" alt="count down gif" width="250px">
-        <div class="search-bar">
-            <img src="/assets/search.svg" alt="" width="30px">
-            <form action="/">
-                <input type="search" id="search" name="search" placeholder="Search for movies" />
-                <button type="submit" class="search-btn">Search</button>
-            </form>
-        </div>
+        <%- include('header', { home: true }) %>
         <div class="btn-container">
             <a href="/add-movie"><button class="menu-btn add-btn">Add Movie</button></a>
             <a href="/add-genre"><button class="menu-btn">Add Genre</button></a>

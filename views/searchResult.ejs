@@ -11,14 +11,6 @@
     <div class="page-wrapper">
         <%- include('header', { home: false }) %>
         <div class="title"><%= title %></div>
-        <div class="category-container">
-            <a href="/movies"><button class="menu-btn">All</button></a>
-            <% genres.forEach((genre) => { %>
-                <a href="/movies/genre/<%= genre.genre %>">
-                    <button class="menu-btn"><%= genre.genre %></button>
-                </a>
-            <% }) %>
-        </div>
         <%- include('movieTable', { movies: movies }) %>
         <a href="/"><button class="menu-btn">Home</button></a>
     </div>

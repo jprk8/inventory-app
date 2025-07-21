@@ -1,4 +1,5 @@
 const db = require('../db/queries');
+const { fetchGif } = require('../utils/giphy');
 
 async function getMovies(req, res) {
     const movies = await db.getAllMovies();
@@ -8,7 +9,8 @@ async function getMovies(req, res) {
 
 async function getDetails(req, res) {
     const movie = await db.getMovieDetails(req.params.id);
-    res.render('details', { title: 'Movie Details', movie: movie });
+    const gifUrl = await fetchGif(movie.title);
+    res.render('details', { title: 'Movie Details', movie: movie, gifUrl: gifUrl });
 }
 
 async function deleteMoviePost(req, res) {

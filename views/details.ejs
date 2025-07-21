@@ -9,9 +9,13 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <img src="/assets/logo.png" alt="movie database logo" width="200px" />
+        <div class="logo-wrapper">
+            <img src="/assets/logo.png" alt="movie database logo" width="200px">
+            <p class="logo-text">Powered by GIPHY™</p>
+        </div>
         <div class="title"><%= title %></div>
         <div class="movie-title"><%= movie.title %></div>
+        <img src=<%=gifUrl %> alt="">
         <div class="wrapper">
             <p><strong>Release Year: </strong><%= movie.year %></p>
             <p><strong>Genre: </strong><%= movie.genre %></p>

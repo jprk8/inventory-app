@@ -7,7 +7,7 @@ async function indexGet(req, res) {
 
 async function addMovieGet(req, res) {
     const genres = await db.getGenres();
-    res.render('addForm', { title: 'Add Movie', genres: genres });
+    res.render('addMovie', { title: 'Add Movie', genres: genres });
 }
 
 async function addMoviePost(req, res) {
@@ -15,8 +15,20 @@ async function addMoviePost(req, res) {
     res.redirect('/');
 }
 
+async function addGenreGet(req, res) {
+    const genres = await db.getGenres();
+    res.render('addGenre', { title: 'Add Genre', genres: genres });
+}
+
+async function addGenrePost(req, res) {
+    await db.addGenre(req.body.genre);
+    res.redirect('/');
+}
+
 module.exports = {
     indexGet,
     addMovieGet,
-    addMoviePost
+    addMoviePost,
+    addGenreGet,
+    addGenrePost,
 };

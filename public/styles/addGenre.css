@@ -1,0 +1,63 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 350px;
+}
+
+input {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    overflow: hidden;
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+button[type="submit"] {
+    font-weight: 600;
+}
+
+.cancel-btn {
+    color: red;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    color: black;
+    /* width: 100%; */
+    text-align: center;
+    table-layout: fixed;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: rgb(225, 227, 233);
+}
+
+th, td {
+    padding: 3px 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

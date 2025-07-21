@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="/styles/addGenre.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <img src="/assets/logo.png" alt="movie database logo" width="200px">
+        <div class="title"><%= title %></div>
+        <form action="/add-genre" method="POST">
+            <div class="form-row">
+                <label for="genre">Genre</label>
+                <input type="text" name="genre" id="genre" placeholder="Enter new genre" required />
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="menu-btn">Add</button>
+                <a href="/">
+                    <button type="button" class="menu-btn cancel-btn">Cancel</button>
+                </a>
+            </div>
+        </form>
+        <h2>Existing Genres</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% genres.forEach((genre) => { %>
+                    <tr>
+                        <td><%= genre.genre %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -6,7 +6,7 @@ const { Client } = require('pg');
 const SQL = `
 CREATE TABLE IF NOT EXISTS genres (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    genre VARCHAR(100)
+    genre VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS movies (
@@ -29,7 +29,10 @@ VALUES
     ('Interstellar', 2014, (SELECT id FROM genres WHERE genre = 'Sci-fi'), 'Christopher Nolan'),
     ('John Wick', 2014, (SELECT id FROM genres WHERE genre = 'Action'), 'Chad Stahelski'),
     ('Superbad', 2007, (SELECT id FROM genres WHERE genre = 'Comedy'), 'Greg Mottola'),
-    ('About Time', 2013, (SELECT id FROM genres WHERE genre = 'Drama'), 'Richard Curtis');
+    ('About Time', 2013, (SELECT id FROM genres WHERE genre = 'Drama'), 'Richard Curtis'),
+    ('2001: A Space Odyssey', 1968, (SELECT id FROM genres WHERE genre = 'Sci-fi'), 'Stanley Kubrick'),
+    ('The Hangover', 2009, (SELECT id FROM genres WHERE genre = 'Comedy'), 'Todd Phillips'),
+    ('Gladiator', 2000, (SELECT id FROM genres WHERE genre = 'Action'), 'Ridley Scott');
 `;
 
 async function main() {

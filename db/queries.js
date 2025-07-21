@@ -98,11 +98,25 @@ async function getGenreMovies(genre) {
     }
 }
 
+async function addGenre(genre) {
+    try {
+        const SQL = `
+        INSERT INTO genres (genre)
+        VALUES ($1);
+        `;
+        await pool.query(SQL, [genre])
+    } catch (err) {
+        console.error('Error creating genre:', err);
+        throw err;
+    }
+}
+
 module.exports = {
     getAllMovies,
     getMovieDetails,
     getGenres,
     addMovie,
     deleteMovie,
-    getGenreMovies
+    getGenreMovies,
+    addGenre,
 };

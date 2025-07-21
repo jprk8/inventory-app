@@ -62,4 +62,8 @@ tbody tr:hover {
 .category-container {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
 }

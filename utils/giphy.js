@@ -1,7 +1,6 @@
 async function fetchGif(title) {
   try {
-    const search = title + " movie";
-    const url = `https://api.giphy.com/v1/gifs/translate?api_key=cjGdfLDepHC3ULDf9t46kOHUSAzgEZ51&s=${search}`;
+    const url = `https://api.giphy.com/v1/gifs/translate?api_key=cjGdfLDepHC3ULDf9t46kOHUSAzgEZ51&s=${title}`;
     const response = await fetch(url, { mode: 'cors' });
     if (!response.ok) {
       throw new Error(response.status);
